@@ -10,6 +10,12 @@ class Solution(object):
             for j in range(len(nums)-i):
                 currentindex=j+i
                 if nums[currentindex] not in heap:
-                    heap[nums[currentindex]]=currentindex
-                
+                    heap[target-nums[currentindex]]=currentindex
+                else:
+                    return i,j,currentindex
+        return None,None,None #if not a any 3 numbers sum is equal to target
+obj=Solution()
+nums=[-1,0,1,2,-1,-4]
+print(obj.threeSum(nums))
+
         
