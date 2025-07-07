@@ -12,9 +12,9 @@ class Solution(object):
         while i < len(prices) and j < len(prices):
             profit=prices[j] - prices[i]
             if (profit) < 0:
-                i+=1
-            else:
-                maximumProfit=prices[j] - prices[i]
+                i=j
+            elif profit>maximumProfit:
+                maximumProfit=profit
             j+=1
         return maximumProfit
 stock=[7,1,5,3,6,4]
