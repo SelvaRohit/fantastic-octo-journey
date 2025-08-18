@@ -1,5 +1,5 @@
 sel=set()
-sel.add(1)
-sel.add(2)
-sel.remove(2)
+sel.add((1,0))
+sel.add((1,0))
+# sel.remove(2)
 print(sel)
