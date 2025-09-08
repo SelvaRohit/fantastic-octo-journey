@@ -1,0 +1,42 @@
+#
+# @lc app=leetcode id=141 lang=python
+#
+# [141] Linked List Cycle
+#
+
+# @lc code=start
+# Definition for singly-linked list.
+class ListNode(object):
+    def __init__(self, x,next=None):
+        self.val = x
+        self.next = next
+
+class Solution(object):
+    def hasCycle(self, head):
+        """
+        :type head: ListNode
+        :rtype: bool
+        """
+        if head !=None:
+            current=head.next
+            traversed_obj=[]
+            while current!=None:
+                if current in traversed_obj:
+                    return True
+                else:
+                    traversed_obj.append(current)
+                    current=current.next
+        else:
+            return False
+            
+if __name__=="__main__":
+    a=ListNode(2)
+    root=ListNode(1,a)
+    obj1=Solution()
+    print(obj1.hasCycle(root))
+
+        
+# @lc code=end
+
+
+        

@@ -1,0 +1,61 @@
+class Node:
+    def __init__(self, data,left=None,right=None):
+        self.data = data
+        self.left = left
+        self.right = right
+
+# In-order DFS: Left, Root, Right
+def in_order_dfs(node):
+    if node is None:
+        return
+    in_order_dfs(node.left)
+    print(node.data, end=' ')
+    in_order_dfs(node.right)
+
+# Pre-order DFS: Root, Left, Right
+def pre_order_dfs(node):
+    if node is None:
+        return
+    print(node.data, end=' ')
+    pre_order_dfs(node.left)
+    pre_order_dfs(node.right)
+
+# Post-order DFS: Left, Right, Root
+def post_order_dfs(node):
+    if node is None:
+        return
+    post_order_dfs(node.left)
+    post_order_dfs(node.right)
+    print(node.data, end=' ')
+
+# BFS: Level order traversal
+def bfs(root):
+    if root is None:
+        return
+    queue = [root]
+    while queue:
+        node = queue.pop(0)
+        print(node.data, end=' ')
+        if node.left:
+            queue.append(node.left)
+        if node.right:
+            queue.append(node.right)
+
+if __name__ == "__main__":
+    # Creating the tree
+    a=Node(8)
+    b=Node(9)
+    c=Node(6,a,b)
+    d=Node(10)
+    e=Node(11)
+    f=Node(7,d,e)
+    root=Node(5,c,f)
+
+    print("In-order DFS: ", end='')
+    in_order_dfs(root)
+    print("\nPre-order DFS: ", end='')
+    pre_order_dfs(root)
+    print("\nPost-order DFS: ", end='')
+    post_order_dfs(root)
+    print("\nLevel order: ", end='')
+    bfs(root)

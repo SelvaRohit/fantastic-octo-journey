@@ -21,6 +21,9 @@ class Solution(object):
                 integer.append(Roman_int_dict[current_letter])
             else:
                 integer.append(Roman_int_dict[current_letter])
+        return (sum(integer))
+obj=Solution()
+print(obj.romanToInt('XC'))
                 
                     
                         
