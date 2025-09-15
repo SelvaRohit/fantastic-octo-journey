@@ -1,5 +1,2 @@
-sel=set()
-sel.add((1,0))
-sel.add((1,0))
-# sel.remove(2)
-print(sel)
+s={1:2,2:3}
+print(s.keys())
