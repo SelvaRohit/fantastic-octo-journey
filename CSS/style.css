@@ -1,0 +1,9 @@
+h1{
+    /* creating style for the tags directly is called Element Selector */
+    color: red;
+    background-color: green;
+}
+h2{
+    color: blue;
+    background-color: gold;
+}
